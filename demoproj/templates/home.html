@@ -1,0 +1,163 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+      <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+     <link rel="stylesheet" type="text/css" href="{% static 'styles/style1.css' %}">
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+     <title>CareerLane</title>
+</head>
+<body>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+          <!-- <img width="35" height="35" style="background-color: white;;" src="https://img-premium.flaticon.com/png/512/4282/4282761.png?token=exp=1622115036~hmac=3c1d462e771a1c195a607b43b9527bc6" alt="..."/> -->
+          <h3 class="navbar-brand">CAREERLANE</h3>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo02">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              {% if user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link" href="accounts/courses">Learn Course</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="accounts/logout">Logout</a>
+              </li>
+              {% else %}
+              <li class="nav-item">
+                <a class="nav-link" href="accounts/register">Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="accounts/login">Login</a>
+              </li>
+              {% endif %}
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+        <section>
+        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+              <img src="{% static 'images/car1.jpg' %}" class="d-block w-100" style="opacity:0.2;background-color: black;height:700px;" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <p style="bottom:120px;color:rgb(241, 239, 239);text-align:start;font-size: 50px;">Learn from anywhere at anytime</p>
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img src="{% static 'images/car2.jpg' %}" class="d-block w-100" style="opacity:0.2;background-color: black;height:700px;" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <p style="bottom:120px;color:rgb(241,239,239);text-align:start;font-size: 50px;">Get exposed to different fields of your choice</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="{% static 'images/car3.jpg' %}"  class="d-block w-100" style="opacity:0.2;background-color: black;height:700px;" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <p style="bottom: 120px;color:rgb(241, 239, 239);text-align:start;font-size: 50px;">Learn as many skills as you want and do projects</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        </section>
+        <section class="container">
+          <h3 style="margin-top:50px;text-align:center;">About CareerLane</h3>
+          <br>
+          <div class="row" style="margin: auto;
+          width: 70%;padding: 10px;">
+            <div class="col-sm-6">
+              <p>CareerLane is a platform where people can learn the course of their wish
+                and upgrade their skills. This platform provides courses from various fields like web developments, 
+                visual arts, ai, ml etc. This provides a benefit to the people to learn any course of their wish. 
+                It helps the learners to organize the skills required for a particular career. The most important benefit 
+                of this platform is you can access the courses with free of cost. So, dear learners, hurry up and register soon.
+
+              </p>
+            </div>
+            <div class="col-sm-6" >
+              <img style="width:100%;" class="img-fluid img-responsive" src="{% static 'images/carousel2.jpg' %}" alt="..."/>
+            </div>
+          </div>
+
+        </section>
+        <section class="container">
+          <h3 style="margin-top:50px;text-align:center;">Why should you register??</h3>
+          <hr>
+          <div class="row">
+            <div class="col-sm-4">
+              <img style="height:40px;width:35px;margin-left:auto;margin-right:auto;display:block;"  src="https://image.flaticon.com/icons/png/512/103/103333.png" alt="..."/>
+              <h5 class="text-center" style="padding-top:10px;color:rgb(107, 106, 106);">100+ courses are available with interesting topics and advanced mentors</h4>
+            </div>
+            <div class="col-sm-4">
+              <img style="height:40px;width:35px;margin-left:auto;margin-right:auto;display:block;"  src="{% static 'images/cost.png' %}" alt="..."/>
+              <h5 class="text-center" style="padding-top:10px;color:rgb(107, 106, 106);">All the courses that you learn on this platform are cost free. So you can learn without restrictions</h4>
+            </div>
+            <div class="col-sm-4">
+              <img style="height:40px;width:35px;margin-left:auto;margin-right:auto;display:block;"  src="{% static 'images/passion.png' %}" alt="..."/>
+              <h5 class="text-center" style="color:rgb(107, 106, 106);">Helps you in making a route map to your career and achieve your goals</h4>
+            </div>
+          </div>
+        </section>
+        <footer>
+          <div class="text-center">
+            <h1 style="color:rgb(58, 57, 57);margin-top:50px;"><b>CAREERLANE</b></h1>
+    <a href="https://www.facebook.com/" style="text-decoration:none;">
+      <img src="https://i.pinimg.com/564x/25/ee/6b/25ee6b672caa33934e2f8303dd151c73.jpg" style="height:50px; width:30px;" alt="..."/>
+    </a>
+    <a href="https://www.instagram.com/accounts/login/?hl=en" style="text-decoration:none;">
+      <img src="https://i.pinimg.com/564x/39/4a/7a/394a7aaecd6b8ce44528649681d9fa05.jpg" style="height:50px; width:40px;" alt="..."/>
+    </a>
+    <a style="text-decoration:none;" href="https://twitter.com/login?lang=en">
+      <img src="https://i.pinimg.com/564x/44/31/d2/4431d298254992432573c3ac9d69f17f.jpg" style="height:50px;width:35px;" alt="..."/>
+    </a>
+    <a style="text-decoration:none;" href="https://in.pinterest.com/">
+      <img src="https://i.pinimg.com/564x/63/13/eb/6313eb09c19b62a7eb1429b4371c4ce4.jpg"
+      style="height:50px; width:35px; text-decoration:none;" alt="..."/>
+    </a>
+    <br>
+    <br>
+    <div class="footer-link">
+      <a  href="#">Home</a>
+      <a  href="#" >About</a>
+      <a  href="#" >Contact</a>
+      <a  href="#" >Components</a>
+    </div>
+  </div>
+  <hr style="width:50%;margin-left:25%;margin-right:25%; border:solid 1px grey;">
+  <p style="text-align:center;">Copyright © 2021 foodie's land, all rights reserved</p>
+  <p style="text-align:center;">careerlane2021@gmail.com</p>
+</div>
+  </footer>             
+        <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#FFFFFF" fill-opacity="1" d="M0,256L48,256C96,256,192,256,288,240C384,224,480,192,576,186.7C672,181,768,203,864,224C960,245,1056,267,1152,250.7C1248,235,1344,181,1392,154.7L1440,128L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg> -->
+</body>
+</html>
